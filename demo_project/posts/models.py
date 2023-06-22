@@ -15,7 +15,7 @@ class Post(models.Model):
 
 class Note(models.Model):
     text = models.TextField()
-    post = models.ForeignKey('Post')
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
     tags = TaggableManager(blank=True)
 
     def __str__(self):
